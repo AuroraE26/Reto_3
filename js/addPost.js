@@ -1,19 +1,3 @@
-objData={
-    titulo:"",
-    tags:["",""],
-    content:"",
-    image:"",
-    date:"",
-    reactions:{
-        likes:0,
-        unicorn:0,
-        save:0,
-    },
-}
-
-console.log('Hola');
-
-
 
 function addPost(){
     let inputTitle=document.querySelector("input[name='title']");
@@ -44,7 +28,7 @@ function addPost(){
     const xhr=new XMLHttpRequest();
     const URL=`https://reto-3-77f5a-default-rtdb.firebaseio.com/.json`;
     xhr.open("POST",URL,true);
-    xhr.send(JSON.stringify({title,tags,content,image}))
+    xhr.send(JSON.stringify({title,tags,content,image, date}))
 }
 
 const btnAdd=document.querySelector("#btnAddPost");
