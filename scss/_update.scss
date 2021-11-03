@@ -1,0 +1,96 @@
+.item {
+    flex: 50%;
+}
+
+.nav-link {
+    color: gray;
+}
+
+.caja_izquierda {
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+    height: 80vh;
+}
+
+section.form {
+    padding: 0 0 0 5vh;
+    min-height: 20vh;
+    height: auto;
+    .titulo{
+        height: 70px;
+        color: gray;
+        font-weight: bold;
+        font-size: 45px;
+        border: none;
+        background-color: transparent;
+    }
+    .parrafo {
+        width: 25vh;
+        border: transparent;
+        margin: 2vh 0 0 0;
+        color: gray;
+    }
+}
+
+.button {
+    margin: 5vh 0 0 0;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: rgb(212, 212, 214) 3px solid;
+    background-color: white;
+}
+
+.button-tags {
+    background-color: transparent;
+    border: transparent;
+    color: gray;
+}
+
+.itemBtn-container {
+    background-color:#f2f2f2;
+    width: 65vh;
+    height: 45px;
+    .btn-2 {
+        margin: 10px 0 0 5vh;
+        border: transparent;
+    }
+    img {
+        width: 30px;
+    }
+}
+
+.btn-3 {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #3d49df;
+    color: white;
+    border: transparent;
+}
+
+.btn-4 {
+    margin: 20px 5px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #d3d3d3;
+    color:rgb(102, 102, 102);
+    border: transparent;
+}
+
+.btn-5 {
+    margin: 5px;
+    width: 5px;
+    height: 40px;
+    background-color:transparent;
+    border: transparent;
+}
+
+.btn-6 {
+    margin: 5px;
+    width: 200px;
+    height: 40px;
+    background-color:transparent;
+    border: transparent;
+    color: rgb(156, 156, 156);
+}
