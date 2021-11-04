@@ -21,10 +21,12 @@ function renderTable(data){
         }
         listPost.push(obj);
     }
+    
+    listPost.forEach(item => {
+        const titulo=document.createElement("h1");
+        titulo.dataset.id=item.id;
+    });
     console.log(listPost);
-
-    const titulo=document.createElement("h1");
-    titulo.dataset.id=5;
 }
 
 document.getElementById('btn3').onclick = function getUsers(){

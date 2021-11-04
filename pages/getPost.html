@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar_update">
+    <nav class="navbar" id="navbar_update">
         <div class="container-fluid">
             <div class="item">
                 <a class="navbar-brand" href="#">
@@ -21,13 +21,9 @@
                           d="M19.099 23.508c0 1.31-.423 2.388-1.27 3.234-.838.839-1.942 1.258-3.312 1.258h-4.403V12.277h4.492c1.31 0 2.385.423 3.224 1.27.846.838 1.269 1.912 1.269 3.223v6.738zm-2.808 0V16.77c0-.562-.187-.981-.562-1.258-.374-.285-.748-.427-1.122-.427h-1.685v10.107h1.684c.375 0 .75-.138 1.123-.415.375-.285.562-.708.562-1.27zM28.185 28h-5.896c-.562 0-1.03-.187-1.404-.561-.375-.375-.562-.843-.562-1.404V14.243c0-.562.187-1.03.562-1.404.374-.375.842-.562 1.404-.562h5.896v2.808H23.13v3.65h3.088v2.808h-3.088v3.65h5.054V28zm7.12 0c-.936 0-1.684-.655-2.246-1.965l-3.65-13.758h3.089l2.807 10.804 2.808-10.804H41.2l-3.65 13.758C36.99 27.345 36.241 28 35.305 28z"
                           style="fill: var(--base-inverted);"></path>
                   </svg>
-                  Create Post</a>
+                  <a id="logoName">Create Post</a>
             </div>
-            <div class="item">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse">
                     <div class="item">
                         <ul class="navbar-nav">
                           <li class="nav-item">
@@ -38,45 +34,48 @@
                           </li>
                         </ul>
                     </div>
-                    <a class="nav-link" href="#">x</a>
-                        
-            </div>
-                
-          </div>
+                    <!-- <a class="nav-link" href="#">x</a> -->
+                </div>
         </div>
       </nav>
-    <div class="container">
+    
         <div class="row g-0">
-            <div class="caja_izquierda col-sm-6 col-md-8">
-                <section class="col-8 form" id="inCov">
-                    <button id="btnCover" value="Click me">Add a cover image</button>
-                    <p id="pCover" name="PCOVER"></p>
-                
-                
-                    <input type="text" name="title" placeholder="New post title here..." class="titulo">
-                    <button class="button-tags">Add up to 4 tags...</button>
-                    <!-- <ul class="dropdown-menu">
-                             <input type="text" value="Add up to 4 tags...">
-                                 <li><a class="dropdown-item" href="#">Action</a></li>
-                                 <li><hr class="dropdown-divider"></li>
-                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                 <li><a class="dropdown-item" href="#">Separated link</a></li>
-                         </ul> -->
-                    </section>
-                        <div class="itemBtn-container">
-                            <button class="btn-2" id="btnImg">
-                                <p id="pIMG" name="pIMG"><img src="../img/img-icon.svg" alt="">
-                                    Upload image</p> 
-                            </button>
-                            <br>
-                            <section class="col-8 form">
-                                <input type="text" name="content" placeholder="Write your content here..." class="parrafo">
-                            </section>
+           <!-- <div class="caja_izquierda col-sm-6 col-md-8"> -->
 
-                        </div>
+            <div class="card" id="caja_izquierda" >
+                <div class="card-body">
+                    <section class="col-8 form" id="inCov">
+                        <button type="button" id="btnCover" class="btn btn-outline-secondary">Add a cover image</button>
+                        <p id="pCover" name="PCOVER"></p>
+                        <input type="text" name="title" placeholder="New post title here..." class="titulo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" autofocusstyle="min-height: 62px; max-height: 62px;">
+                        <button class="button-tags" id="addTags">Add up to 4 tags...</button>
+                    </section>
+                    <div class="itemBtn-container">
+                                <button class="btn-2" id="btnImg">
+                                    <p id="pIMG" name="pIMG"><img src="../img/img-icon.svg" alt="">
+                                        Upload image</p> 
+                                </button>
+                                <br>
+                                <section class="col-8 form">
+                                    <input type="text" name="content" placeholder="Write your post content here..." class="parrafo">
+                                </section>
+                                <div class="contDate">
+                                    <label for="start" style="color: gray;">Publication Date:</label>
+                                    <div>
+                                        <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" style="color: gray;">
+
+                                    </div>
+                                    
+                                </div>
+                                
+                    </div>
+                        
+                            
+                </div>
             </div>
-            <div>
+                
+            <!-- </div> -->
+            <div class="contBtns">
                 <button class="btn-3" id="btn3">Publish</button>
                 <button class="btn-4" id="btn4">Save draft</button>
                 <button class="btn-5">
@@ -86,7 +85,7 @@
 
             </div>
        </div>
-    </div>
+    
 
     <script src="../js/getPost.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
