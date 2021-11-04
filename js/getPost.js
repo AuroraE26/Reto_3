@@ -4,13 +4,14 @@ objData={
     //tags:["",""],
     content:"",
     image:"",
-    //date:"",
-    /*reactions:{
+    date:"",
+    hour:"",
+    reactions:{
         likes:0,
         unicorn:0,
         save:0,
     },
-    */
+    
 }
 function renderTable(data){
     let listPost = [];
@@ -22,14 +23,20 @@ function renderTable(data){
         listPost.push(obj);
     }
     
-    listPost.forEach(item => {
-        const titulo=document.createElement("h1");
-        titulo.dataset.id=item.id;
-    });
     console.log(listPost);
+
+    //listPost
+    let uno=document.querySelector("span[id='firstCardTxt']");
+    uno.textContent="Hola";
+    listPost.forEach(item => {
+    //     const titulo=document.createElement("h1");
+    //     titulo.dataset.id=item.id;
+    });
+    // console.log(listPost);
 }
 
-document.getElementById('btn3').onclick = function getUsers(){
+document.getElementById('botoncito').onclick = function getUsers(){
+    console.log("GET");
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", ()=>{
         if(xhr.readyState === 4 && xhr.status === 200){
