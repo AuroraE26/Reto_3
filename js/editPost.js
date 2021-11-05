@@ -1,66 +1,42 @@
-objData={
-    title:"",
-    cover:"",
-    //tags:["",""],
-    content:"",
-    image:"",
-    date:"",
-    hour:"",
-    reactions:{
-        likes:0,
-        unicorn:0,
-        save:0,
-    },
-    
-}
-function renderTable(data){
-    let listPost = [];
-    for(let key in data){
-        let obj = {
-            id: key,
-            ...data[key],
-        }
-        listPost.push(obj);
-    }
-    
-    console.log(listPost);
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+// console.log(urlParams.get('id'))
 
-
-
-    
-    let inputTitle=document.querySelector("input[name='title']");
-    let inputTags=document.querySelector("input[name='tags']");
-    let inputContent=document.querySelector("input[name='content']");
-    let inputCover=document.querySelector("p[name='PCOVER']");
-    let inputImg=document.querySelector("p[name='pIMG']");
-    let inputDate=document.querySelector("input[name='trip-start']");
-    //titulo.dataset.id=item.id;
-    //let num="1"
-    //listPost
-   //document.querySelector("span[id='firstCardTxt1']").textContent=listPost[0].title;
-   // uno.textContent="Hola";
-//    document.getElementById('firstCardTxt'+num).textContent=listPost[0].title;
-
-    // listPost.forEach((item,index) => {
-          
-    //     let idName='firstCardTxt'+index;
-    //     document.getElementById(idName).textContent=item.title;
-    // });
-    // console.log(listPost);
-}
-
-document.getElementById('botoncito').onclick = function getUsers(){
-    console.log("GET");
+function getPostById(id){
     const xhr = new XMLHttpRequest();
-    xhr.addEventListener("readystatechange", ()=>{
-        if(xhr.readyState === 4 && xhr.status === 200){
+    const URL = `https://reto-3-77f5a-default-rtdb.firebaseio.com/${id}/.json`;
+    xhr.addEventListener("readystatechange", () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             const response = JSON.parse(xhr.responseText);
-            renderTable(response);
+            printDataInput(response)
+            //   printInput(response, userId);
+            //aqui va funcion print Datos
+        } else {
+            console.log(xhr.readyState);
         }
-    })
-    const URL = `https://reto-3-77f5a-default-rtdb.firebaseio.com/.json`;
+    });
     xhr.open("GET", URL, true);
     xhr.send();
+};
+
+function getDatos(){
+    let id = urlParams.get('id')
+    getPostById(id)
+
+}
+getDatos()
+
+function printDataInput(response){
+    const inputTitle = document.querySelector("#title");
+    inputTitle.value = response.title;
+    const inputTags = document.querySelector("#addTags")
+    inputTags.value = response.addTags;
+    const inputImg = document.querySelector("#pIMG")
+    inputImg.value = response.pIMG;
+    const inputContent = document.querySelector("#content")
+    inputContent.value = response.content;
+    const inputDate = document.querySelector("#start")
+    inputDate.value = response.start;
 
 }
 
@@ -68,3 +44,27 @@ document.getElementById('botoncito').onclick = function getUsers(){
 
 
 
+
+// function getUserById()
+
+//   function updateUser(userId, data){
+//     const xhr = new XMLHttpRequest();
+//     const URL = `https://js-14va-default-rtdb.firebaseio.com/odonml/${userId}/.json`;
+//     xhr.addEventListener("readystatechange", () => {
+//       if (xhr.readyState === 4 && xhr.status === 200) {
+//           console.log(xhr.status);
+//           cleanTable();
+//             getUsers();
+//       } else {
+//         console.log(xhr.readyState);
+//       }
+//     });
+//     xhr.open("PUT", URL, true);
+//     xhr.send(JSON.stringify(data));
+//   };
+
+// const btnSave = document.querySelector("#btn-save");
+// btnSave.addEventListener("click", addPerson)
+
+
+// getUsers();
