@@ -179,3 +179,14 @@ section.form{
 }
 
 
+#card-list{
+    display: flex;
+    flex-direction: column;
+}
+.cardPost{
+    height: 200px;
+    width: 500px;
+    padding: 5px;
+    border: solid 1px red;
+}
+
